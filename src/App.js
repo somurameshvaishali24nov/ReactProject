@@ -1,25 +1,35 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React, { useState } from 'react';
+import firebase from './firebase';
+import Navbar from './components/navbar';
+import './components/FontawesomeIcon';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import RootReducer from './reducer/rootReducer'
+
+const store = createStore(RootReducer);
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [ todolist, setTodolist ] = useState([]);
+	const [loading, setLoading] = useState(false);
+
+	const ref = firebase.firestore().collection("todolist");
+	console.log(ref);
+
+	if ( loading ) {
+		return <h1>Loading ... </h1>
+	}
+
+	return (
+		<Provider store={store}>
+			<div className="App">
+				<h1> Todo List </h1>
+				<Navbar />
+			</div>
+		</Provider>
+	);
 }
 
 export default App;

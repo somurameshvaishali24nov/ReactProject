@@ -8,16 +8,18 @@ class Todo extends Component {
     }
 
     handleChange = event => {
-        this.props.onCompletedTask(event.target.checked, this.props.todo.Id);
+        this.props.onCompletedTask(event.target.checked, this.props.todo.id, this.props.todo);
     }
     
     render() {
-        const markCompletedClass = this.props.todo.Completed ? 'add-opacity-low' : '';
+        const markCompletedClass = this.props.todo.Completed ? 'add-opacity-low added-space-top' : 'added-space-top';
         const inputSupplies = (
             <div>
                 <label className={markCompletedClass}>
-                    <input type="checkbox" name="Completed" checked={this.props.todo.Completed} onChange={ this.handleChange } /> 
-                        { this.props.todo.Title } 
+                    <div className="checkbox-sur-div">
+                        <input type="checkbox" name="Completed" className="checked-list-checkbox" checked={this.props.todo.Completed} onChange={ this.handleChange } /> 
+                    </div> 
+                    &nbsp; { this.props.todo.Title } 
                 </label>
                 
             </div>

@@ -32,7 +32,7 @@ class Tabs extends Component {
 
         return (
             <div className="tabs">
-                <ol className="tab-list">
+                <ol className="tab-list row">
                     {children.map((child) => {
                         const { label } = child.props;
                         return (
@@ -40,7 +40,7 @@ class Tabs extends Component {
                                 activeTab={activeTab}
                                 key={label}
                                 label={label}
-                                onClick={onClickTabItem}
+                                onClick={ onClickTabItem }
                             />
                         );
                     })}

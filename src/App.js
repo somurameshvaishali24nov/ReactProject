@@ -1,27 +1,25 @@
 import logo from './logo.svg';
 import './App.scss';
-import React, { useState } from 'react';
-import firebase from './firebase';
-import Navbar from './components/navbar';
+import React, { useState } from 'react';import Navbar from './components/navbar';
 import './components/FontawesomeIcon';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import RootReducer from './reducer/rootReducer'
+import RootReducer from './reducer/rootReducer';
+import thunk from 'redux-thunk';
+import { reduxFirestore, getFirestore } from 'redux-firestore';
+import { getFirebase } from 'react-redux-firebase';
+import { reactReduxFirebase } from 'react-redux-firebase';
+import fbConfig from './config/fbConfig';
 
-const store = createStore(RootReducer);
-
+const store = createStore(RootReducer,
+	compose(
+		applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+		reduxFirestore(fbConfig),
+		reactReduxFirebase(fbConfig)
+	)
+); 
 
 function App() {
-	const [ todolist, setTodolist ] = useState([]);
-	const [loading, setLoading] = useState(false);
-
-	const ref = firebase.firestore().collection("todolist");
-	console.log(ref);
-
-	if ( loading ) {
-		return <h1>Loading ... </h1>
-	}
-
 	return (
 		<Provider store={store}>
 			<div className="App">

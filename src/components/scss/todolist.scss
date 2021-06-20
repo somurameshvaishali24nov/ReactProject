@@ -1,5 +1,11 @@
-$opacity-level: 0.7;
-$large-font-size: 17px;
+@import './variable';
+
+body {
+    height: 100vh;
+    background-color: #FFE4E1;
+    background-image: linear-gradient(to right, #fbd3d3, #a466d2);
+    background-repeat: no-repeat;
+}
 
 .add-opacity-low {
     text-decoration: line-through;
@@ -7,9 +13,20 @@ $large-font-size: 17px;
     opacity: $opacity-level;
 }
 
+.opacity-low {
+    pointer-events: none;
+    opacity: $opacity-level;
+}
+
 .increate-X-font-size {
     font-size: $large-font-size;
     font-weight: bold;
+    width: 40px;
+    height: 40px;
+}
+
+.font-size-font-25 {
+    font-size: 25px;
 }
 
 .tab-list {
@@ -25,7 +42,92 @@ $large-font-size: 17px;
 }
 
 .tab-list-active {
-    background-color: white;
+    background-color: #ccc;
     border: solid #ccc;
     border-width: 1px 1px 0 1px;
+}
+
+.todo-all-visible {
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding-bottom: 50px;
+    background: $white;
+
+    background: #fff;
+    object-fit: cover;
+    object-position: 69% -6%;
+    box-shadow: 20px -18px 70px #ccc;
+    border-radius: 10px;
+
+    .tab-content {
+        text-align: initial;
+        padding-left: 15px;
+    }
+
+    .tab-list {
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .tab-list-item {
+        background-color: $white;
+        border-bottom: 1px solid #ccc;
+        padding: 20px;
+    }
+}
+
+.cover-background-color {
+    background: rgba(0, 0, 0, 0.32);
+    pointer-events: none;
+}
+
+.tab-list-active {
+    .font-size-font-25 {
+        color: purple;
+    }
+}
+
+.add-space-around-center {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.checked-list-checkbox {
+    width: 16px;
+    height: 16px;
+}
+
+.plus-btn-styles {
+    position: absolute;
+    bottom: -25px;
+    left: 43%;
+
+    button {
+        border: 0;
+        padding: 15px;
+        border-radius: 50%;
+        width: 55px;
+        background: $yellow-color;
+        color: $white;
+    }
+}
+
+.tab-list-item:first-child {
+    border-top-left-radius: 10px;
+}
+
+.tab-list-item:last-child {
+    border-top-right-radius: 10px;
+}
+
+.added-space-top {
+    display: flex;
+
+    .checkbox-sur-div {
+        padding-top: 3px;
+    }
 }

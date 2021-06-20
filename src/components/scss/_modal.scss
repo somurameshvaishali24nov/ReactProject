@@ -1,0 +1,136 @@
+@import './variable';
+
+.modal-overlay-wpr {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: $bgcolor-grey;   
+    z-index: 9999;
+    content: "";
+    transition: all 0.2s ease;
+    display: block;
+    top: 0;
+
+    .modal-dialog {
+        background: $background-modal-color;
+        width: 50%;
+        margin: 0 auto;
+        padding: $default-padding;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: auto;
+        transition: all .2s ease-out;
+        z-index: 9999;
+
+        .modal-title {
+            font-size: rem(22px);
+            color:inherit;
+            margin-top: 0;
+            color: $black-color;
+        }
+
+        .modal-body {
+            flex: 1 1 auto;
+            padding-bottom: 5%;
+            padding-top: 10%;
+            padding-left: 2%;
+
+            .title-div {
+                padding-bottom: $default-padding;
+
+                input[type="text"] {
+                    width: 100%;
+                    border: 0;
+                    padding: 15px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid $input-border;
+                    padding-left: 0;
+                    outline: none;
+                    
+                }
+            }
+
+            .completed-div {
+                padding-top: 15px;
+
+                label {
+                    width: 100%;
+                    text-align: initial;
+
+                    input[type="checkbox"] {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+
+                .completed-text {
+                    padding-right: $default-padding;
+                }
+            }
+        }
+
+        .modal-footer {
+            border-top: 1px solid $grey;
+            padding-bottom: 0;
+            padding-top: 2%;
+            margin-top: 2%;
+            margin-bottom: 0;
+            vertical-align: middle;
+
+            .rows {
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                width: 100%;
+
+                &::before, 
+                &::after {
+                    display: none;
+                }
+            }
+
+            a {
+                color: inherit;
+            }
+
+            .cancel {
+                text-align: left;
+                width: 30%;
+                padding-top: 3%;
+                padding-bottom: 2%;
+                background: transparent;
+            }
+        }
+    }
+
+
+    .add-todo-list-btn {
+        background: #808080;
+        border: 0;
+        color: #DCDCDC;
+        padding: 10px;
+        text-transform: uppercase;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding: 10px 30px 10px 30px;
+    }
+
+    .overall-body-modal {
+        position: relative;
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: -30px;
+
+            .close-btn-x {
+                border-radius: 56%;
+                border: 1px solid #b1b5b9;
+                background: #6c757d;
+                color: $white;
+            }
+
+        }
+    }
+}

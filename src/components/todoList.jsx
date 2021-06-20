@@ -10,25 +10,30 @@ class TodosList   extends Component {
 
     }
 
-    onCompletedParentTaskTodoList = ( data, valueId ) => {
-        this.props.onCompletedParentTask( data, valueId );
+    onCompletedParentTaskTodoList = ( data, valueId, todo ) => {
+        this.props.onCompletedParentTask( data, valueId, todo );
     }
 
     render() { 
-        const todos = this.props.todoList.map( todo => (
-            <Todo key={ todo.Id } todo={ todo } onCompletedTask={this.onCompletedParentTaskTodoList}>
+        const todos = this.props.todoList.map( todo => { 
+            return todo.Title ? (
+            <Todo key={ todo.id } todo={ todo } onCompletedTask={this.onCompletedParentTaskTodoList}>
                 <br />
             </Todo>
-        ));
+            ) : null
+        });
 
         const completed = [ ...this.props.todoList ];
         let showOnlyCompleted = completed.filter( complete => complete.Completed === true );
 
-        showOnlyCompleted = showOnlyCompleted.map( todo => (
-            <Todo key={ todo.Id } todo={ todo } onCompletedTask={this.onCompletedParentTaskTodoList}>
+        showOnlyCompleted = showOnlyCompleted.map( todo => {
+            return todo.Title ? (
+            <Todo key={ todo.id } todo={ todo } onCompletedTask={this.onCompletedParentTaskTodoList}>
                 <br />
             </Todo>
-        ));
+            ) 
+            : null}
+        );
 
         return (
             <React.Fragment>

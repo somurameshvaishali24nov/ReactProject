@@ -23,7 +23,7 @@ class Tab extends Component {
     render() {
         const { onClick, props: { activeTab, label} } = this;
 
-        let className = 'tab-list-item';
+        let className = 'tab-list-item col-6';
 
         if (activeTab === label) {
             className += ' tab-list-active';
@@ -34,7 +34,7 @@ class Tab extends Component {
                 className={className}
                 onClick={onClick}
             >
-                {label === 'Todo List' ? (<FontAwesomeIcon icon="tasks"/>) : ( <FontAwesomeIcon icon="check-square"/> )}
+                {label === 'Todo List' ? (<FontAwesomeIcon className="font-size-font-25" icon="tasks"/>) : ( <FontAwesomeIcon className="font-size-font-25" icon="check-square"/> )}
             </li>
         );
     }

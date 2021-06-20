@@ -54,6 +54,7 @@ body {
     margin-bottom: 30px;
     padding-bottom: 50px;
     background: $white;
+    min-height: 500px;
 
     background: #fff;
     object-fit: cover;
@@ -91,7 +92,7 @@ body {
 }
 
 .add-space-around-center {
-    padding-top: 30px;
+    padding-top: 70%;
     padding-bottom: 30px;
     text-align: center;
 }

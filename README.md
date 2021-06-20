@@ -1,11 +1,51 @@
-# Getting Started with Create React App
+# Getting Started with Create React App - TODO LIST
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Documentation
+The below project explains about the React App. I am used Redux as the state management and Firebase as the Database
+
+I have divided the Tasks into two namely All tasks and Completed Tasks
+
+###### `All tasks - has both completed and not completed tasks` 
+###### `Completed Task - Displays only completed tasks`
+
+### `When All Tasks is clicked`
+In All Tasks if u wanted to change the Not completed task to Completed task then u can no longer be changed, \
+you will also see the strike on the Title of the task which denotes that the task is completed. \
+Also when the Task is completed calling an Back End to say that the process has been completed and also displaying a small toast.
+
+
+
+
+### `When Completed Task is clicked`
+You can only view the Task
+
+
+
+### `When the Add Button is clicked`
+When the Add button is clicked, I am displaying a modal, so that the user can enter the the values.\
+##### `To be noted` 
+ADD TO THE LIST button will be disabled until and unless the Title textbox is filled
+
+
+
+
+
+##### After adding The Task 
+After adding the task you will see the lists of tasks are displaying under `All Tasks`, until and unless the new task is completed by pressing the Task Completed checkbox,\ 
+you will not see the Lists of newly added task unless `Completed Task`
+
+
+## HOW TO RUN THE CODE
+Run the below command
+
+Step1: npm install
+Step2: npm start
 
 ## Available Scripts
 
 In the project directory, you can run:
-Hello Welcome!
 
 ### `npm start`
 
@@ -15,57 +55,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `Config file`
+const firebaseConfig = {
+  apiKey: "AIzaSyBZrHgm5tjOWXhU3uJF5jxNzPFi9Fou_Jw",
+  authDomain: "todo-list-e8d87.firebaseapp.com",
+  projectId: "todo-list-e8d87",
+  storageBucket: "todo-list-e8d87.appspot.com",
+  messagingSenderId: "62033783186",
+  appId: "1:62033783186:web:feae43a9d31677ee04b94b"
+};
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

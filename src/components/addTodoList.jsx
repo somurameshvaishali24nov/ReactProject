@@ -43,13 +43,21 @@ class AddTodoList extends Component {
         this.setState( initialState );
         this.props.onCloseFlyout(); // After clicking on Create New List button Close it
     }
+
+    capitalise ( value ) {
+        return value.charAt(0).toUpperCase() + value.slice(1)
+    }
     
     onNewCompleteChange = event => {
         const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
+        let value = target.type === 'checkbox' ? target.checked : target.value;
         let name = target.name;
         
-        let todoItem = {...this.state.todoItem}
+        let todoItem = {...this.state.todoItem};
+
+        // eslint-disable-next-line no-unused-expressions
+        name === 'Title' ? value = this.capitalise(value) : null;
+
         todoItem[name] = value;
 
         this.setState({ todoItem });

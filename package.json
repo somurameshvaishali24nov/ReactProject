@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "bootstrap": "^5.0.1",
     "node-sass": "^6.0.0",
     "react-redux": "^5.1.1",
     "react-toastify": "^7.0.4",

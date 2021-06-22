@@ -75,25 +75,9 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (state) => {
-    let x = {...state.firestore.ordered};
-    if ( Object.keys(x).length > 0 ) {
-        let sweet = [...state.firestore.ordered.todolist]
-        sweet = sweet.sort((x, y) => x.Completed - y.Completed  )
-        let x = sweet;
-
-        sweet.filter((i, idx) => {
-            x.filter((y, index) => {
-                if (i.id === y.id && i.Completed !== y.Completed) {
-                    i.Completed = true;
-                }
-            });
-        });
-
-        state.firestore.ordered.todolist = [ ...sweet.reduce((map, obj) => map.set(obj.id, obj), new Map()).values()];
-    }
     return {
         ...state,
-        todoList: state.firestore.ordered.todolist
+        todoList: state.todoListReduce.todoList
     }
 }
 

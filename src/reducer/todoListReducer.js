@@ -1,10 +1,5 @@
 const initState = {
     todoList: [
-        {
-            id: 1,
-            Title: "Meet the Dentist",
-            Completed: true
-        }
     ],
     openAddTodoListComponent: false,
     todoItem: {
@@ -18,6 +13,7 @@ const TodoListReducer = ( state = initState, action ) => {
     let todoList = []
     switch ( action.type ) {
         case "NEW_TODO_LIST":
+            state.todoList.push({...action.payload});
             return state;
         case "MARK_COMPLETED":
             todoList = [...state.todoList];
@@ -32,6 +28,9 @@ const TodoListReducer = ( state = initState, action ) => {
             return state;
         case "MARK_COMPLETED_ERROR":
             console.error("Something went wrong! ", state, action);
+            return state;
+        case "@@reduxFirestore/LISTENER_RESPONSE":
+            state.todoList = [...action.payload.ordered]
             return state;
         default:
             return state;

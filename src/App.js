@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
-import React, { useState } from 'react';import Navbar from './components/navbar';
+import React, { useState } from 'react';
+import Navbar from './components/navbar';
 import './components/FontawesomeIcon';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
